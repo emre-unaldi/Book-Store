@@ -34,3 +34,7 @@ C:\Users\emree\Desktop\C#\BookStore\obj\Debug\net8.0\ref\BookStore.dll
 C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\emree\Desktop\C#\BookStore\obj\Debug\net8.0\BookStore.sourcelink.json
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\FluentValidation.dll

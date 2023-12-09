@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "6e3RvoqH26q9Fjifkcej+cwGWbHWDYtqieV1ppFB4ERRIgfGcotMQO0g1HpGahtrovWFDbnfgFhAB2Xvd7RVyw==",
+  "dgSpecHash": "6ev7pM7U6mvwXcQ9k8v3ryHB0f7If+FItre5RQ7bqk6J/cabeLCoVgbtLpvo06XyGLWzyYjjOgM7gMpEROXNBw==",
   "success": true,
   "projectFilePath": "C:\\Users\\emree\\Desktop\\C#\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\emree\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\emree\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\emree\\.nuget\\packages\\fluentvalidation\\11.8.1\\fluentvalidation.11.8.1.nupkg.sha512",
     "C:\\Users\\emree\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0\\microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
+    "C:\\Users\\emree\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\emree\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0\\microsoft.entityframeworkcore.8.0.0.nupkg.sha512",
     "C:\\Users\\emree\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0\\microsoft.entityframeworkcore.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\emree\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0\\microsoft.entityframeworkcore.analyzers.8.0.0.nupkg.sha512",

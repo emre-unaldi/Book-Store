@@ -1,5 +1,8 @@
 using BookStore.DBOperations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// builder.Services.AddDbContext(options => options.UseInMemoryDatabase(string.Format("BookStoreDB"))); 
+// In Memory Db Context
 builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDB"));
+
+// Add AutoMapper configuration
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 // Add this line to register controllers
 builder.Services.AddControllers();
@@ -23,7 +29,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// In Memory
+// In Memory Initialize Data
 DataGenerator.Initialize(builder.Services.BuildServiceProvider());
 
 // Use this instead of app.MapGet

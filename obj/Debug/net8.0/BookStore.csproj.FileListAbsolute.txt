@@ -38,3 +38,7 @@ C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\emree\Desktop\C#\BookStore\obj\Debug\net8.0\BookStore.sourcelink.json
 C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Khaos.MediatR.Rpc.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Khaos.MediatR.Rpc.Codecs.NewtosoftJson.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\MediatR.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Newtonsoft.Json.dll

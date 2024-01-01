@@ -1,7 +1,7 @@
 using BookStore.DBOperations;
+using BookStore.Middlewares;
+using BookStore.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +20,9 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 // Add this line to register controllers
 builder.Services.AddControllers();
 
+// Logger
+builder.Services.AddSingleton<ILoggerService, ConsoleLogger>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,7 +33,15 @@ if (app.Environment.IsDevelopment())
 }
 
 // In Memory Initialize Data
-DataGenerator.Initialize(builder.Services.BuildServiceProvider());
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+    DataGenerator.Initialize(serviceProvider);
+}
+
+
+//app.UseCustomExceptionMiddleware();
+//app.UseExceptionHandlingMiddleware();
 
 // Use this instead of app.MapGet
 app.MapControllers();

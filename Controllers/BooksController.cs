@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using BookStore.BookOperations.CreateBook;
-using BookStore.BookOperations.DeleteBook;
-using BookStore.BookOperations.GetBookDetail;
-using BookStore.BookOperations.GetBooks;
-using BookStore.BookOperations.UpdateBook;
+using BookStore.Application.BookOperations.Commands.CreateBook;
+using BookStore.Application.BookOperations.Commands.DeleteBook;
+using BookStore.Application.BookOperations.Commands.UpdateBook;
+using BookStore.Application.BookOperations.Queries.GetBookDetail;
+using BookStore.Application.BookOperations.Queries.GetBooks;
 using BookStore.DBOperations;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
@@ -26,10 +26,16 @@ namespace BookStore.Controllers
         [HttpGet]
         public IActionResult GetBooks()
         {
-            GetBooksQuery query = new GetBooksQuery(_dbContext, _mapper);
-            var result = query.Handle();
+            try
+            {
+                GetBooksQuery query = new GetBooksQuery(_dbContext, _mapper);
+                var result = query.Handle();
 
-            return Ok(result);
+                return Ok(result);
+            } catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         } 
         
         [HttpGet("{id}")]
@@ -51,7 +57,6 @@ namespace BookStore.Controllers
             return Ok(result);
         }
 
-        // POST
         [HttpPost]
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
@@ -62,21 +67,6 @@ namespace BookStore.Controllers
                 command.Model = newBook;
                 CreateBookCommandValidator validator = new CreateBookCommandValidator();
                 validator.ValidateAndThrow(command);
-
-                /*
-                 * ValidationResult result =  validator.Validate(command);
-                if (!result.IsValid)
-                {
-                    foreach (var item in result.Errors)
-                    {
-                        Console.WriteLine($"Property : {item.PropertyName} Error : {item.ErrorMessage}");
-                    }
-                }
-                else
-                {
-                    command.Handle();
-                }
-                */
                 command.Handle();
             }
             catch (Exception ex)
@@ -87,8 +77,6 @@ namespace BookStore.Controllers
             return Ok();
         }
 
-        // PUT
-        // http://localhost:5043/BookControllers/{id}
         [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updateBook)
         {
@@ -109,8 +97,6 @@ namespace BookStore.Controllers
             return Ok();
         }
 
-        // DELETE
-        // http://localhost:5043/BookControllers/{id}
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {

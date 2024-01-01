@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using BookStore.DBOperations;
+using BookStore.Entities;
 
-namespace BookStore.BookOperations.CreateBook
+namespace BookStore.Application.BookOperations.Commands.CreateBook
 {
     public class CreateBookCommand
     {

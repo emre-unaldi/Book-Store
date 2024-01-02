@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 // In Memory Db Context
 builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDB"));
+builder.Services.AddScoped<IBookStoreDbContext>(provider => provider.GetService<BookStoreDbContext>());
 
 // Add AutoMapper configuration
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());

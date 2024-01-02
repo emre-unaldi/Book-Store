@@ -1,8 +1,12 @@
 using BookStore.DBOperations;
 using BookStore.Middlewares;
 using BookStore.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +28,22 @@ builder.Services.AddControllers();
 // Logger
 builder.Services.AddSingleton<ILoggerService, ConsoleLogger>();
 
+// Authentication
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateAudience = true,
+        ValidateIssuer = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Token:Issuer"],
+        ValidAudience = builder.Configuration["Token:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
+        ClockSkew = TimeSpan.Zero
+    };
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,6 +60,9 @@ using (var scope = app.Services.CreateScope())
     DataGenerator.Initialize(serviceProvider);
 }
 
+// Authentication & Authorization
+app.UseAuthentication();
+app.UseAuthorization();
 
 //app.UseCustomExceptionMiddleware();
 //app.UseExceptionHandlingMiddleware();

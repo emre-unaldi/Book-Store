@@ -7,6 +7,7 @@ using BookStore.Application.GenreOperations.Commands.CreateGenre;
 using BookStore.Application.GenreOperations.Commands.UpdateGenre;
 using BookStore.Application.GenreOperations.Queries.GetGenreDetail;
 using BookStore.Application.GenreOperations.Queries.GetGenres;
+using BookStore.Application.UserOperations.CreateUser;
 using BookStore.Entities;
 
 namespace BookStore.Common
@@ -22,14 +23,12 @@ namespace BookStore.Common
                 .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name)).ReverseMap();
             CreateMap<UpdateBookModel, Book>().ReverseMap();
 
-
-
-
-
             CreateMap<Genre, CreateGenreModel>().ReverseMap();
             CreateMap<Genre, UpdateGenreModel>().ReverseMap();
             CreateMap<Genre, GenresViewModel>().ReverseMap();
             CreateMap<Genre, GenreDetailViewModel>().ReverseMap();
+
+            CreateMap<User, CreateUserModel>().ReverseMap();    
         }
     }
 }

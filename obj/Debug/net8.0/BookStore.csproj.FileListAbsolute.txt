@@ -42,3 +42,11 @@ C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Khaos.MediatR.Rpc.dll
 C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Khaos.MediatR.Rpc.Codecs.NewtosoftJson.dll
 C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\MediatR.dll
 C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\emree\Desktop\C#\BookStore\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
